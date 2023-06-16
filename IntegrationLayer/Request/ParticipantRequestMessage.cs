@@ -7,7 +7,7 @@ namespace IntegrationLayer.Request
     {
         [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonProperty("last_name")]
+        [JsonProperty("lastname")]
         public string LastName { get; set; }
         [JsonProperty("birth")]
         public DateTime Birth { get; set; }

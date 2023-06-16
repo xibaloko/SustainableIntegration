@@ -48,7 +48,7 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="ParticipantPage.aspx">Participants</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Pages/ParticipantPage.aspx">Participants</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,7 +58,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Participants Manager</p>
+                
             </footer>
         </div>
     </form>

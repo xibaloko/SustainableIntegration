@@ -122,7 +122,8 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="ParticipantPage.aspx" />
+    <Content Include="Pages\AddParticipantPage.aspx" />
+    <Content Include="Pages\ParticipantPage.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -197,11 +198,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ParticipantPage.aspx.cs">
+    <Compile Include="Pages\AddParticipantPage.aspx.cs">
+      <DependentUpon>AddParticipantPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AddParticipantPage.aspx.designer.cs">
+      <DependentUpon>AddParticipantPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ParticipantPage.aspx.cs">
       <DependentUpon>ParticipantPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ParticipantPage.aspx.designer.cs">
+    <Compile Include="Pages\ParticipantPage.aspx.designer.cs">
       <DependentUpon>ParticipantPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

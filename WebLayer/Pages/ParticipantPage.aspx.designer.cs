@@ -7,7 +7,7 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace WebLayer
+namespace WebLayer.Pages
 {
 
 
