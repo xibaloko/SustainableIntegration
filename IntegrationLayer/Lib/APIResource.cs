@@ -13,17 +13,23 @@ namespace IntegrationLayer.Lib
     public interface IApiResources : IDisposable
     {
         string BaseURI { get; set; }
+
+        // Standard Methods
+        T GetAll<T>();
+        T GetById<T>(string id);
+        T Post<T>(object data);
+        T Put<T>(string id, object data);
+        T Delete<T>(string id);
+
+        // Async Methods
         Task<T> GetAsync<T>();
         Task<T> GetAsync<T>(string id);
         Task<T> GetAsync<T>(string id, string apiUserToken);
         Task<T> GetAsync<T>(string id, string partOfUrl, string apiUserToken);
-
         Task<T> PostAsync<T>(object data);
         Task<T> PostAsync<T>(object data, string partOfUrl);
         Task<T> PostAsync<T>(object data, string partOfUrl, string apiUserToken);
-
         Task<T> PutAsync<T>(string id, object data);
-
         Task<T> DeleteAsync<T>(string id);
     }
 
@@ -40,7 +46,7 @@ namespace IntegrationLayer.Lib
         public string BaseURI
         {
             get { return _baseURI; }
-            set { _baseURI = _endpoint + "/" + _apiVersion + value; }
+            set { _baseURI = _endpoint + value; }
         }
 
         public APIResource(IHttpClientWrapper customClient, JsonSerializerSettings customJsonSerializerSettings = null)
@@ -49,15 +55,15 @@ namespace IntegrationLayer.Lib
             JsonSettings = customJsonSerializerSettings ?? new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
             _version = "1.0.5";
             _apiVersion = "v1";
-            _endpoint = "https://api.iugu.com";
+            _endpoint = "https://localhost:7220/api";
             _apiKey = Client.Properties.ApiKey;
 
             if (string.IsNullOrEmpty(_apiKey))
             {
-                throw new MissingFieldException("Chave de API não configurada. Verifique a se a chave iuguApiKey com seu token está presente no seu arquivo .config");
+                throw new MissingFieldException("Chave de API não configurada.");
             }
 
-            _baseURI = _endpoint + "/" + _apiVersion;
+            _baseURI = _endpoint;
         }
 
         public APIResource() : this(new StandardHttpClient(),
@@ -70,6 +76,37 @@ namespace IntegrationLayer.Lib
             client.Dispose();
             GC.SuppressFinalize(this);
         }
+
+        #region Standard Methods Implementation
+
+        public T GetAll<T>()
+        {
+            throw new NotImplementedException();
+        }
+
+        public T GetById<T>(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Post<T>(object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Put<T>(string id, object data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Delete<T>(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region Async Methods Implementation
 
         public async Task<T> GetAsync<T>()
         {
@@ -142,7 +179,9 @@ namespace IntegrationLayer.Lib
             var response = await SendRequestAsync(HttpMethod.Delete, $"{BaseURI}/{id}", null, customApiToken).ConfigureAwait(false);
             return await ProcessResponse<T>(response).ConfigureAwait(false);
         }
+        #endregion
 
+        #region Request And Response Async Treatment
         private async Task<T> ProcessResponse<T>(HttpResponseMessage response)
         {
             var data = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
@@ -229,6 +268,8 @@ namespace IntegrationLayer.Lib
 
             }
         }
+        #endregion
+
     }
 
     internal sealed class ComplexErrorResponse

@@ -5,11 +5,11 @@ namespace IntegrationLayer.Entity
 {
     public class ParticipantModel
     {
-        [JsonProperty("id_participant")]
+        [JsonProperty("id")]
         public int Id { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonProperty("last_name")]
+        [JsonProperty("lastname")]
         public string LastName { get; set; }
         [JsonProperty("birth")]
         public DateTime Birth { get; set; }
