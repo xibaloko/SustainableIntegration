@@ -11,43 +11,52 @@ namespace WebLayer.Pages
 {
 
 
-    public partial class ParticipantPage
+    public partial class EditParticipantPage
     {
 
         /// <summary>
-        /// Controle BtnAddParticipant.
+        /// Controle UpdatePanel1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAddParticipant;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// Controle GrdParticipants.
+        /// Controle TxtParticipantName.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GrdParticipants;
+        protected global::System.Web.UI.WebControls.TextBox TxtParticipantName;
 
         /// <summary>
-        /// Controle BtnConfirmDeleteParticipant.
+        /// Controle TxtParticipantLastName.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnConfirmDeleteParticipant;
+        protected global::System.Web.UI.WebControls.TextBox TxtParticipantLastName;
 
         /// <summary>
-        /// Controle HdnIdParticipant.
+        /// Controle TxtParticipantBirth.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HdnIdParticipant;
+        protected global::System.Web.UI.WebControls.TextBox TxtParticipantBirth;
+
+        /// <summary>
+        /// Controle BtnSaveData.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSaveData;
     }
 }
