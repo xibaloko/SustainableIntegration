@@ -6,7 +6,7 @@
         <section class="row" aria-labelledby="aspnetTitle">
             <h1 id="aspnetTitle">Participants Manager</h1>
             <p class="lead">Project developed to introduce API integration with SDK</p>
-            <p><a href="/Pages/ParticipantPage.aspx" class="btn btn-primary btn-md">Participants &raquo;</a></p>
+            <p><a href="/Pages/ParticipantPage.aspx" class="btn btn-warning btn-md">Participants &raquo;</a></p>
         </section>
     </main>
 
